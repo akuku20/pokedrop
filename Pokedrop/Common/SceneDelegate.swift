@@ -23,8 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             collectionNavController.tabBarItem = tabBarItem
             
             let tabBarController = UITabBarController()
-            let controllers = [collectionNavController]
-            tabBarController.viewControllers = controllers
+            tabBarController.viewControllers = [collectionNavController]
             
             window.rootViewController = tabBarController
             

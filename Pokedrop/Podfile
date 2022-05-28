@@ -3,6 +3,5 @@ use_frameworks!
 
 target 'Pokedrop' do
   pod 'Alamofire'
-  pod 'PromiseKit'
   pod 'AlamofireImage'
 end
