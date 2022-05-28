@@ -1,0 +1,714 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		849B27A0284237C9002F5051 /* PokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B279F284237C9002F5051 /* PokemonModel.swift */; };
+		849B27A328423E0D002F5051 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B27A228423E0D002F5051 /* DataManager.swift */; };
+		84F3DCF0284229BA00DE2565 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3DCEF284229BA00DE2565 /* AppDelegate.swift */; };
+		84F3DCF2284229BA00DE2565 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3DCF1284229BA00DE2565 /* SceneDelegate.swift */; };
+		84F3DCF4284229BA00DE2565 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3DCF3284229BA00DE2565 /* CollectionViewController.swift */; };
+		84F3DCF7284229BA00DE2565 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F3DCF5284229BA00DE2565 /* Main.storyboard */; };
+		84F3DCFA284229BA00DE2565 /* Pokedrop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84F3DCF8284229BA00DE2565 /* Pokedrop.xcdatamodeld */; };
+		84F3DCFC284229BB00DE2565 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F3DCFB284229BB00DE2565 /* Assets.xcassets */; };
+		84F3DD0A284229BC00DE2565 /* PokedropTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3DD09284229BC00DE2565 /* PokedropTests.swift */; };
+		84F3DD14284229BC00DE2565 /* PokedropUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3DD13284229BC00DE2565 /* PokedropUITests.swift */; };
+		84F3DD16284229BC00DE2565 /* PokedropUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3DD15284229BC00DE2565 /* PokedropUITestsLaunchTests.swift */; };
+		E9EBC0148B7E09DD67510CB2 /* Pods_Pokedrop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF91B36FEC339A7EE1FCD933 /* Pods_Pokedrop.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84F3DD06284229BC00DE2565 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84F3DCE4284229BA00DE2565 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84F3DCEB284229BA00DE2565;
+			remoteInfo = Pokedrop;
+		};
+		84F3DD10284229BC00DE2565 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84F3DCE4284229BA00DE2565 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84F3DCEB284229BA00DE2565;
+			remoteInfo = Pokedrop;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		81220C755415EC08FFC2DEE3 /* Pods-Pokedrop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokedrop.release.xcconfig"; path = "Target Support Files/Pods-Pokedrop/Pods-Pokedrop.release.xcconfig"; sourceTree = "<group>"; };
+		849B279F284237C9002F5051 /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
+		849B27A228423E0D002F5051 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		84F3DCEC284229BA00DE2565 /* Pokedrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F3DCEF284229BA00DE2565 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84F3DCF1284229BA00DE2565 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		84F3DCF3284229BA00DE2565 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		84F3DCF6284229BA00DE2565 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84F3DCF9284229BA00DE2565 /* Pokedrop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pokedrop.xcdatamodel; sourceTree = "<group>"; };
+		84F3DCFB284229BB00DE2565 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84F3DD00284229BB00DE2565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84F3DD05284229BC00DE2565 /* PokedropTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokedropTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F3DD09284229BC00DE2565 /* PokedropTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedropTests.swift; sourceTree = "<group>"; };
+		84F3DD0F284229BC00DE2565 /* PokedropUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokedropUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F3DD13284229BC00DE2565 /* PokedropUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedropUITests.swift; sourceTree = "<group>"; };
+		84F3DD15284229BC00DE2565 /* PokedropUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedropUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EF91B36FEC339A7EE1FCD933 /* Pods_Pokedrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pokedrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC7267B3B261AC5301FD1948 /* Pods-Pokedrop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokedrop.debug.xcconfig"; path = "Target Support Files/Pods-Pokedrop/Pods-Pokedrop.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84F3DCE9284229BA00DE2565 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9EBC0148B7E09DD67510CB2 /* Pods_Pokedrop.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F3DD02284229BC00DE2565 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F3DD0C284229BC00DE2565 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		129F6F8B7448CD16104803A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC7267B3B261AC5301FD1948 /* Pods-Pokedrop.debug.xcconfig */,
+				81220C755415EC08FFC2DEE3 /* Pods-Pokedrop.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		849B279E284237BB002F5051 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				849B279F284237C9002F5051 /* PokemonModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		849B27A128423DFF002F5051 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				849B27A228423E0D002F5051 /* DataManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		84F3DCE3284229BA00DE2565 = {
+			isa = PBXGroup;
+			children = (
+				849B27A128423DFF002F5051 /* Services */,
+				849B279E284237BB002F5051 /* Model */,
+				84F3DD2228422BA300DE2565 /* Collection */,
+				84F3DCEE284229BA00DE2565 /* Common */,
+				84F3DD08284229BC00DE2565 /* PokedropTests */,
+				84F3DD12284229BC00DE2565 /* PokedropUITests */,
+				84F3DCED284229BA00DE2565 /* Products */,
+				129F6F8B7448CD16104803A6 /* Pods */,
+				9F49CA89EF7BD00E5DE97809 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		84F3DCED284229BA00DE2565 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84F3DCEC284229BA00DE2565 /* Pokedrop.app */,
+				84F3DD05284229BC00DE2565 /* PokedropTests.xctest */,
+				84F3DD0F284229BC00DE2565 /* PokedropUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84F3DCEE284229BA00DE2565 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				84F3DCEF284229BA00DE2565 /* AppDelegate.swift */,
+				84F3DCF1284229BA00DE2565 /* SceneDelegate.swift */,
+				84F3DCF5284229BA00DE2565 /* Main.storyboard */,
+				84F3DCFB284229BB00DE2565 /* Assets.xcassets */,
+				84F3DD00284229BB00DE2565 /* Info.plist */,
+				84F3DCF8284229BA00DE2565 /* Pokedrop.xcdatamodeld */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		84F3DD08284229BC00DE2565 /* PokedropTests */ = {
+			isa = PBXGroup;
+			children = (
+				84F3DD09284229BC00DE2565 /* PokedropTests.swift */,
+			);
+			path = PokedropTests;
+			sourceTree = "<group>";
+		};
+		84F3DD12284229BC00DE2565 /* PokedropUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84F3DD13284229BC00DE2565 /* PokedropUITests.swift */,
+				84F3DD15284229BC00DE2565 /* PokedropUITestsLaunchTests.swift */,
+			);
+			path = PokedropUITests;
+			sourceTree = "<group>";
+		};
+		84F3DD2228422BA300DE2565 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				84F3DCF3284229BA00DE2565 /* CollectionViewController.swift */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		9F49CA89EF7BD00E5DE97809 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF91B36FEC339A7EE1FCD933 /* Pods_Pokedrop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84F3DCEB284229BA00DE2565 /* Pokedrop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84F3DD19284229BC00DE2565 /* Build configuration list for PBXNativeTarget "Pokedrop" */;
+			buildPhases = (
+				C711C9E318ED55769552B73C /* [CP] Check Pods Manifest.lock */,
+				84F3DCE8284229BA00DE2565 /* Sources */,
+				84F3DCE9284229BA00DE2565 /* Frameworks */,
+				84F3DCEA284229BA00DE2565 /* Resources */,
+				DCDAA2B5F0918B3B5009E35D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pokedrop;
+			productName = Pokedrop;
+			productReference = 84F3DCEC284229BA00DE2565 /* Pokedrop.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84F3DD04284229BC00DE2565 /* PokedropTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84F3DD1C284229BC00DE2565 /* Build configuration list for PBXNativeTarget "PokedropTests" */;
+			buildPhases = (
+				84F3DD01284229BC00DE2565 /* Sources */,
+				84F3DD02284229BC00DE2565 /* Frameworks */,
+				84F3DD03284229BC00DE2565 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84F3DD07284229BC00DE2565 /* PBXTargetDependency */,
+			);
+			name = PokedropTests;
+			productName = PokedropTests;
+			productReference = 84F3DD05284229BC00DE2565 /* PokedropTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84F3DD0E284229BC00DE2565 /* PokedropUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84F3DD1F284229BC00DE2565 /* Build configuration list for PBXNativeTarget "PokedropUITests" */;
+			buildPhases = (
+				84F3DD0B284229BC00DE2565 /* Sources */,
+				84F3DD0C284229BC00DE2565 /* Frameworks */,
+				84F3DD0D284229BC00DE2565 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84F3DD11284229BC00DE2565 /* PBXTargetDependency */,
+			);
+			name = PokedropUITests;
+			productName = PokedropUITests;
+			productReference = 84F3DD0F284229BC00DE2565 /* PokedropUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84F3DCE4284229BA00DE2565 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					84F3DCEB284229BA00DE2565 = {
+						CreatedOnToolsVersion = 13.4;
+					};
+					84F3DD04284229BC00DE2565 = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = 84F3DCEB284229BA00DE2565;
+					};
+					84F3DD0E284229BC00DE2565 = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = 84F3DCEB284229BA00DE2565;
+					};
+				};
+			};
+			buildConfigurationList = 84F3DCE7284229BA00DE2565 /* Build configuration list for PBXProject "Pokedrop" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84F3DCE3284229BA00DE2565;
+			productRefGroup = 84F3DCED284229BA00DE2565 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84F3DCEB284229BA00DE2565 /* Pokedrop */,
+				84F3DD04284229BC00DE2565 /* PokedropTests */,
+				84F3DD0E284229BC00DE2565 /* PokedropUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84F3DCEA284229BA00DE2565 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F3DCFC284229BB00DE2565 /* Assets.xcassets in Resources */,
+				84F3DCF7284229BA00DE2565 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F3DD03284229BC00DE2565 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F3DD0D284229BC00DE2565 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C711C9E318ED55769552B73C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pokedrop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCDAA2B5F0918B3B5009E35D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pokedrop/Pods-Pokedrop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pokedrop/Pods-Pokedrop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pokedrop/Pods-Pokedrop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84F3DCE8284229BA00DE2565 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F3DCF4284229BA00DE2565 /* CollectionViewController.swift in Sources */,
+				849B27A328423E0D002F5051 /* DataManager.swift in Sources */,
+				84F3DCFA284229BA00DE2565 /* Pokedrop.xcdatamodeld in Sources */,
+				84F3DCF0284229BA00DE2565 /* AppDelegate.swift in Sources */,
+				849B27A0284237C9002F5051 /* PokemonModel.swift in Sources */,
+				84F3DCF2284229BA00DE2565 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F3DD01284229BC00DE2565 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F3DD0A284229BC00DE2565 /* PokedropTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F3DD0B284229BC00DE2565 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F3DD16284229BC00DE2565 /* PokedropUITestsLaunchTests.swift in Sources */,
+				84F3DD14284229BC00DE2565 /* PokedropUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84F3DD07284229BC00DE2565 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84F3DCEB284229BA00DE2565 /* Pokedrop */;
+			targetProxy = 84F3DD06284229BC00DE2565 /* PBXContainerItemProxy */;
+		};
+		84F3DD11284229BC00DE2565 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84F3DCEB284229BA00DE2565 /* Pokedrop */;
+			targetProxy = 84F3DD10284229BC00DE2565 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84F3DCF5284229BA00DE2565 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84F3DCF6284229BA00DE2565 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84F3DD17284229BC00DE2565 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84F3DD18284229BC00DE2565 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84F3DD1A284229BC00DE2565 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC7267B3B261AC5301FD1948 /* Pods-Pokedrop.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 234FSJDL82;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Common/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Pokedrop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84F3DD1B284229BC00DE2565 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81220C755415EC08FFC2DEE3 /* Pods-Pokedrop.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 234FSJDL82;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Common/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Pokedrop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		84F3DD1D284229BC00DE2565 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 234FSJDL82;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PokedropTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pokedrop.app/Pokedrop";
+			};
+			name = Debug;
+		};
+		84F3DD1E284229BC00DE2565 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 234FSJDL82;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PokedropTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pokedrop.app/Pokedrop";
+			};
+			name = Release;
+		};
+		84F3DD20284229BC00DE2565 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 234FSJDL82;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PokedropUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Pokedrop;
+			};
+			name = Debug;
+		};
+		84F3DD21284229BC00DE2565 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 234FSJDL82;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PokedropUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Pokedrop;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84F3DCE7284229BA00DE2565 /* Build configuration list for PBXProject "Pokedrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F3DD17284229BC00DE2565 /* Debug */,
+				84F3DD18284229BC00DE2565 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84F3DD19284229BC00DE2565 /* Build configuration list for PBXNativeTarget "Pokedrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F3DD1A284229BC00DE2565 /* Debug */,
+				84F3DD1B284229BC00DE2565 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84F3DD1C284229BC00DE2565 /* Build configuration list for PBXNativeTarget "PokedropTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F3DD1D284229BC00DE2565 /* Debug */,
+				84F3DD1E284229BC00DE2565 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84F3DD1F284229BC00DE2565 /* Build configuration list for PBXNativeTarget "PokedropUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F3DD20284229BC00DE2565 /* Debug */,
+				84F3DD21284229BC00DE2565 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		84F3DCF8284229BA00DE2565 /* Pokedrop.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				84F3DCF9284229BA00DE2565 /* Pokedrop.xcdatamodel */,
+			);
+			currentVersion = 84F3DCF9284229BA00DE2565 /* Pokedrop.xcdatamodel */;
+			path = Pokedrop.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 84F3DCE4284229BA00DE2565 /* Project object */;
+}
