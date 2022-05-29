@@ -37,7 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             // Tab bar
             let tabBarController = UITabBarController()
-            tabBarController.tabBar.layer.borderWidth = 0.5
+            tabBarController.tabBar.layer.borderWidth = 1
             tabBarController.tabBar.layer.borderColor = UIColor.black.cgColor
             tabBarController.tabBar.clipsToBounds = true
             tabBarController.viewControllers = [collectionNavController, ballNavController]
