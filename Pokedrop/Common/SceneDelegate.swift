@@ -6,7 +6,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -16,17 +15,34 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             
-            let colletionVC = CollectionViewController()
+            // Collection
+            let collectionVM = CollectionViewModel()
+            let colletionVC = CollectionViewController(viewModel: collectionVM)
             let collectionNavController = UINavigationController(rootViewController: colletionVC)
-            let tabBarItem = UITabBarItem(title: "", image: UIImage(named: "collectionIcon"), tag: 0)
-            tabBarItem.setOnlyImageAppearance()
-            collectionNavController.tabBarItem = tabBarItem
+            let collectionImg = UIImage(named: "collectionIcon")?.withRenderingMode(.alwaysOriginal).withTintColor(.black)
+            let collectionSelectedImg = UIImage(named: "collectionIcon")?.withRenderingMode(.alwaysOriginal).withTintColor(.gray)
+            let tabBarItem1 = UITabBarItem(title: nil, image: collectionImg, selectedImage: collectionSelectedImg)
+            tabBarItem1.setOnlyImageAppearance()
+            collectionNavController.tabBarItem = tabBarItem1
             
+            //Open Pokeball
+            let ballVM = PokeballsViewModel()
+            let ballVC = PokeballsViewController(viewModel: ballVM)
+            let ballNavController = UINavigationController(rootViewController: ballVC)
+            let ballImg = UIImage(named: "ballIcon")?.withRenderingMode(.alwaysOriginal).withTintColor(.black)
+            let ballSelectedImg = UIImage(named: "ballIcon")?.withRenderingMode(.alwaysOriginal).withTintColor(.gray)
+            let tabBarItem2 = UITabBarItem(title: nil, image: ballImg, selectedImage: ballSelectedImg)
+            tabBarItem2.setOnlyImageAppearance()
+            ballNavController.tabBarItem = tabBarItem2
+            
+            // Tab bar
             let tabBarController = UITabBarController()
-            tabBarController.viewControllers = [collectionNavController]
+            tabBarController.tabBar.layer.borderWidth = 0.5
+            tabBarController.tabBar.layer.borderColor = UIColor.black.cgColor
+            tabBarController.tabBar.clipsToBounds = true
+            tabBarController.viewControllers = [collectionNavController, ballNavController]
             
             window.rootViewController = tabBarController
-            
             self.window = window
             window.makeKeyAndVisible()
         }
@@ -68,7 +84,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension UITabBarItem {
     func setOnlyImageAppearance() {
-        self.imageInsets = UIEdgeInsets(top: 6.0, left: 0, bottom: -6, right: 0)
+        self.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
         self.title = nil
         self.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 1000.0)
     }

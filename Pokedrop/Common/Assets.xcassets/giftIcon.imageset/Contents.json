@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "draw.png",
+      "filename" : "gift-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "draw-1.png",
+      "filename" : "gift.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "draw-2.png",
+      "filename" : "gift-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

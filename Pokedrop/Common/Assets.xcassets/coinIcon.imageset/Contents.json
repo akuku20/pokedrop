@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "collection.png",
+      "filename" : "NicePng_8-bit-mario-png_1648732-ConvertImage.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "collection-1.png",
+      "filename" : "NicePng_8-bit-mario-png_1648732-ConvertImage-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "collection-2.png",
+      "filename" : "NicePng_8-bit-mario-png_1648732-ConvertImage-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
@@ -19,8 +19,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "template-rendering-intent" : "template"
   }
 }

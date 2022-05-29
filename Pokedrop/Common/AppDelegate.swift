@@ -7,10 +7,20 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    static var shared: AppDelegate! {
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            return delegate
+        }
+        fatalError()
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        PokemonDatabase.shared.fetchData { error in
+            guard error.isNil else {
+                fatalError(error!)
+            }
+        }
+        
         return true
     }
 

@@ -3,17 +3,17 @@
 
 import UIKit
 
-struct PokemonDatabase: Decodable {
+struct PokemonList: Decodable {
     var count: Int
     var results: [PokemonBase]
-    
-    struct PokemonBase: Decodable {
-        var name: String
-        var url: String
-        var imageUrl: URL? {
-            guard let idString = url.split(separator: "/").last else { return nil }
-            return URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(idString).png")
-        }
+}
+
+struct PokemonBase: Decodable {
+    var name: String
+    var url: String
+    var imageUrl: URL? {
+        guard let idString = url.split(separator: "/").last else { return nil }
+        return URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(idString).png")
     }
 }
 

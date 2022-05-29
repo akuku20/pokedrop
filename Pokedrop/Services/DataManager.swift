@@ -10,11 +10,11 @@ class DataManager {
     
     private init() {}
 
-    func getPokemonDatabase(completion: @escaping (_ pokemonDatabase: PokemonDatabase?) -> Void) {
+    func getPokemonList(completion: @escaping (_ pokemonDatabase: PokemonList?) -> Void) {
         AF.request("https://pokeapi.co/api/v2/pokemon?limit=1300&offset=0").response { response in
             switch response.result {
             case .success(let json):
-                if let result = try? JSONDecoder().decode(PokemonDatabase.self, from: json!) {
+                if let result = try? JSONDecoder().decode(PokemonList.self, from: json!) {
                     completion(result)
                 } else {
                     completion(nil)
