@@ -67,6 +67,8 @@ extension UIViewController {
         
         let leftBarView = UIView()
         leftBarView.translatesAutoresizingMaskIntoConstraints = false
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showHourlyReward))
+        leftBarView.addGestureRecognizer(tapGesture)
         leftBarView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         leftBarView.heightAnchor.constraint(equalToConstant: 32).isActive = true
         
@@ -82,5 +84,34 @@ extension UIViewController {
         leftItem.customView = leftBarView
         
         navigationItem.leftBarButtonItem = leftItem
+    }
+    
+    @objc private func showHourlyReward() {
+        
+        let fullString = NSMutableAttributedString(string: "You have been awarded\n")
+        let attachment = NSTextAttachment(image: UIImage(named: "coinIcon")!)
+        attachment.bounds = CGRect(x: 0, y: -4, width: 15, height: 22)
+        let attachmentString = NSAttributedString(attachment: attachment)
+        fullString.append(attachmentString)
+        fullString.append(NSAttributedString(string: " 200"))
+        
+        showPopup(title: "Hourly Reward",
+                  attributedMessage: fullString,
+                  buttonTitle: "Ok")
+    }
+    
+    func showPopup(title: String,
+                   message: String? = nil,
+                   attributedMessage: NSMutableAttributedString? = nil,
+                   buttonTitle: String,
+                   action: (() -> Void)? = nil) {
+        
+        let model = PopupViewController.PopupModel(title: title,
+                                                   message: message,
+                                                   attributedMessage: attributedMessage,
+                                                   buttonTitle: buttonTitle,
+                                                   action: action)
+        let vc = PopupViewController(model: model)
+        present(vc, animated: true)
     }
 }

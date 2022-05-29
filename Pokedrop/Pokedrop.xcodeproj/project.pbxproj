@@ -31,6 +31,8 @@
 		84F3DD0A284229BC00DE2565 /* PokedropTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3DD09284229BC00DE2565 /* PokedropTests.swift */; };
 		84F3DD14284229BC00DE2565 /* PokedropUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3DD13284229BC00DE2565 /* PokedropUITests.swift */; };
 		84F3DD16284229BC00DE2565 /* PokedropUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3DD15284229BC00DE2565 /* PokedropUITestsLaunchTests.swift */; };
+		84F426782843D8B900B18E1A /* PopupVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F426772843D8B900B18E1A /* PopupVIew.swift */; };
+		84F4267B2843DEF700B18E1A /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4267A2843DEF700B18E1A /* PopupViewController.swift */; };
 		E9EBC0148B7E09DD67510CB2 /* Pods_Pokedrop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF91B36FEC339A7EE1FCD933 /* Pods_Pokedrop.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +83,8 @@
 		84F3DD0F284229BC00DE2565 /* PokedropUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokedropUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F3DD13284229BC00DE2565 /* PokedropUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedropUITests.swift; sourceTree = "<group>"; };
 		84F3DD15284229BC00DE2565 /* PokedropUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedropUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		84F426772843D8B900B18E1A /* PopupVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupVIew.swift; sourceTree = "<group>"; };
+		84F4267A2843DEF700B18E1A /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		EF91B36FEC339A7EE1FCD933 /* Pods_Pokedrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pokedrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7267B3B261AC5301FD1948 /* Pods-Pokedrop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokedrop.debug.xcconfig"; path = "Target Support Files/Pods-Pokedrop/Pods-Pokedrop.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,7 +124,7 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		842E30EF2842CB2400453DC9 /* Draw */ = {
+		842E30EF2842CB2400453DC9 /* Pokeballs */ = {
 			isa = PBXGroup;
 			children = (
 				842E30F02842CECE00453DC9 /* PokeballsViewModel.swift */,
@@ -128,7 +132,7 @@
 				842E30F42842DB8100453DC9 /* PokeballsView.swift */,
 				842E30F62842E0CA00453DC9 /* PokeballsCell.swift */,
 			);
-			path = Draw;
+			path = Pokeballs;
 			sourceTree = "<group>";
 		};
 		849B279E284237BB002F5051 /* Model */ = {
@@ -151,6 +155,7 @@
 		849B27AE28425C2A002F5051 /* Supplementary */ = {
 			isa = PBXGroup;
 			children = (
+				84F426792843DED100B18E1A /* Popup */,
 				849B27AA284259EA002F5051 /* BaseView.swift */,
 				849B27B128425ECF002F5051 /* OptionalExtension.swift */,
 				849B27B328426825002F5051 /* UIViewControllerExtension.swift */,
@@ -166,7 +171,7 @@
 				849B279E284237BB002F5051 /* Model */,
 				849B27A128423DFF002F5051 /* Services */,
 				84F3DD2228422BA300DE2565 /* Collection */,
-				842E30EF2842CB2400453DC9 /* Draw */,
+				842E30EF2842CB2400453DC9 /* Pokeballs */,
 				849B27AE28425C2A002F5051 /* Supplementary */,
 				84F3DD08284229BC00DE2565 /* PokedropTests */,
 				84F3DD12284229BC00DE2565 /* PokedropUITests */,
@@ -226,6 +231,15 @@
 				849B27A828425811002F5051 /* CollectionView.swift */,
 			);
 			path = Collection;
+			sourceTree = "<group>";
+		};
+		84F426792843DED100B18E1A /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				84F426772843D8B900B18E1A /* PopupVIew.swift */,
+				84F4267A2843DEF700B18E1A /* PopupViewController.swift */,
+			);
+			path = Popup;
 			sourceTree = "<group>";
 		};
 		9F49CA89EF7BD00E5DE97809 /* Frameworks */ = {
@@ -413,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F3DCF4284229BA00DE2565 /* CollectionViewController.swift in Sources */,
+				84F4267B2843DEF700B18E1A /* PopupViewController.swift in Sources */,
 				849B27A328423E0D002F5051 /* DataManager.swift in Sources */,
 				842E30F92842E2C700453DC9 /* UIFontExtension.swift in Sources */,
 				842E30F52842DB8100453DC9 /* PokeballsView.swift in Sources */,
@@ -421,6 +436,7 @@
 				84F3DCF0284229BA00DE2565 /* AppDelegate.swift in Sources */,
 				849B27B428426825002F5051 /* UIViewControllerExtension.swift in Sources */,
 				842E30F32842DB0B00453DC9 /* PokeballsViewController.swift in Sources */,
+				84F426782843D8B900B18E1A /* PopupVIew.swift in Sources */,
 				849B27A0284237C9002F5051 /* PokemonModel.swift in Sources */,
 				849B27B028425CE3002F5051 /* PokemonDatabase.swift in Sources */,
 				849B27B228425ECF002F5051 /* OptionalExtension.swift in Sources */,
