@@ -33,6 +33,12 @@
 		84F3DD16284229BC00DE2565 /* PokedropUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F3DD15284229BC00DE2565 /* PokedropUITestsLaunchTests.swift */; };
 		84F426782843D8B900B18E1A /* PopupVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F426772843D8B900B18E1A /* PopupVIew.swift */; };
 		84F4267B2843DEF700B18E1A /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4267A2843DEF700B18E1A /* PopupViewController.swift */; };
+		84F4267E284410FD00B18E1A /* OpenBallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4267D284410FD00B18E1A /* OpenBallViewModel.swift */; };
+		84F4268028441C8600B18E1A /* DrawDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4267F28441C8600B18E1A /* DrawDelegateProtocol.swift */; };
+		84F4268228441D7600B18E1A /* OpenBallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4268128441D7600B18E1A /* OpenBallViewController.swift */; };
+		84F4268428441E8500B18E1A /* OpenBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4268328441E8500B18E1A /* OpenBallView.swift */; };
+		84F426862844303A00B18E1A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F426852844303A00B18E1A /* BaseViewController.swift */; };
+		84F42688284432F500B18E1A /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F42687284432F500B18E1A /* ButtonFactory.swift */; };
 		E9EBC0148B7E09DD67510CB2 /* Pods_Pokedrop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF91B36FEC339A7EE1FCD933 /* Pods_Pokedrop.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +91,12 @@
 		84F3DD15284229BC00DE2565 /* PokedropUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedropUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		84F426772843D8B900B18E1A /* PopupVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupVIew.swift; sourceTree = "<group>"; };
 		84F4267A2843DEF700B18E1A /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		84F4267D284410FD00B18E1A /* OpenBallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBallViewModel.swift; sourceTree = "<group>"; };
+		84F4267F28441C8600B18E1A /* DrawDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawDelegateProtocol.swift; sourceTree = "<group>"; };
+		84F4268128441D7600B18E1A /* OpenBallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBallViewController.swift; sourceTree = "<group>"; };
+		84F4268328441E8500B18E1A /* OpenBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBallView.swift; sourceTree = "<group>"; };
+		84F426852844303A00B18E1A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		84F42687284432F500B18E1A /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
 		EF91B36FEC339A7EE1FCD933 /* Pods_Pokedrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pokedrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7267B3B261AC5301FD1948 /* Pods-Pokedrop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokedrop.debug.xcconfig"; path = "Target Support Files/Pods-Pokedrop/Pods-Pokedrop.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +172,8 @@
 				849B27B128425ECF002F5051 /* OptionalExtension.swift */,
 				849B27B328426825002F5051 /* UIViewControllerExtension.swift */,
 				842E30F82842E2C700453DC9 /* UIFontExtension.swift */,
+				84F426852844303A00B18E1A /* BaseViewController.swift */,
+				84F42687284432F500B18E1A /* ButtonFactory.swift */,
 			);
 			path = Supplementary;
 			sourceTree = "<group>";
@@ -172,6 +186,7 @@
 				849B27A128423DFF002F5051 /* Services */,
 				84F3DD2228422BA300DE2565 /* Collection */,
 				842E30EF2842CB2400453DC9 /* Pokeballs */,
+				84F4267C284410D400B18E1A /* OpenBall */,
 				849B27AE28425C2A002F5051 /* Supplementary */,
 				84F3DD08284229BC00DE2565 /* PokedropTests */,
 				84F3DD12284229BC00DE2565 /* PokedropUITests */,
@@ -240,6 +255,17 @@
 				84F4267A2843DEF700B18E1A /* PopupViewController.swift */,
 			);
 			path = Popup;
+			sourceTree = "<group>";
+		};
+		84F4267C284410D400B18E1A /* OpenBall */ = {
+			isa = PBXGroup;
+			children = (
+				84F4267D284410FD00B18E1A /* OpenBallViewModel.swift */,
+				84F4268128441D7600B18E1A /* OpenBallViewController.swift */,
+				84F4268328441E8500B18E1A /* OpenBallView.swift */,
+				84F4267F28441C8600B18E1A /* DrawDelegateProtocol.swift */,
+			);
+			path = OpenBall;
 			sourceTree = "<group>";
 		};
 		9F49CA89EF7BD00E5DE97809 /* Frameworks */ = {
@@ -427,17 +453,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F3DCF4284229BA00DE2565 /* CollectionViewController.swift in Sources */,
+				84F42688284432F500B18E1A /* ButtonFactory.swift in Sources */,
 				84F4267B2843DEF700B18E1A /* PopupViewController.swift in Sources */,
 				849B27A328423E0D002F5051 /* DataManager.swift in Sources */,
 				842E30F92842E2C700453DC9 /* UIFontExtension.swift in Sources */,
+				84F4268428441E8500B18E1A /* OpenBallView.swift in Sources */,
+				84F426862844303A00B18E1A /* BaseViewController.swift in Sources */,
 				842E30F52842DB8100453DC9 /* PokeballsView.swift in Sources */,
 				849B27A928425811002F5051 /* CollectionView.swift in Sources */,
 				84F3DCFA284229BA00DE2565 /* Pokedrop.xcdatamodeld in Sources */,
+				84F4267E284410FD00B18E1A /* OpenBallViewModel.swift in Sources */,
 				84F3DCF0284229BA00DE2565 /* AppDelegate.swift in Sources */,
 				849B27B428426825002F5051 /* UIViewControllerExtension.swift in Sources */,
 				842E30F32842DB0B00453DC9 /* PokeballsViewController.swift in Sources */,
 				84F426782843D8B900B18E1A /* PopupVIew.swift in Sources */,
 				849B27A0284237C9002F5051 /* PokemonModel.swift in Sources */,
+				84F4268028441C8600B18E1A /* DrawDelegateProtocol.swift in Sources */,
 				849B27B028425CE3002F5051 /* PokemonDatabase.swift in Sources */,
 				849B27B228425ECF002F5051 /* OptionalExtension.swift in Sources */,
 				842E30F72842E0CA00453DC9 /* PokeballsCell.swift in Sources */,
@@ -445,6 +476,7 @@
 				84F3DCF2284229BA00DE2565 /* SceneDelegate.swift in Sources */,
 				849B27AB284259EA002F5051 /* BaseView.swift in Sources */,
 				842E30F12842CECE00453DC9 /* PokeballsViewModel.swift in Sources */,
+				84F4268228441D7600B18E1A /* OpenBallViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +644,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 234FSJDL82;
@@ -622,13 +655,15 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Pokedrop;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spinney.Pokedrop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -641,6 +676,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 234FSJDL82;
@@ -651,13 +687,15 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Pokedrop;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spinney.Pokedrop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

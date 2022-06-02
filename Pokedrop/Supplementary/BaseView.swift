@@ -10,4 +10,10 @@ open class BaseView: UIView {
     
     @available(*, unavailable)
     required public init?(coder: NSCoder) { nil }
+    
+    func switchInteraction(allowed: Bool) {
+        guard let tabVc = self.window?.rootViewController as? UITabBarController else { return }
+        tabVc.tabBar.isUserInteractionEnabled = allowed
+        isUserInteractionEnabled = allowed
+    }
 }

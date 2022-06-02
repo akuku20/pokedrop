@@ -10,7 +10,8 @@
 #endif
 #endif
 
+#import "MBProgressHUD.h"
 
-FOUNDATION_EXPORT double AlamofireImageVersionNumber;
-FOUNDATION_EXPORT const unsigned char AlamofireImageVersionString[];
+FOUNDATION_EXPORT double MBProgressHUDVersionNumber;
+FOUNDATION_EXPORT const unsigned char MBProgressHUDVersionString[];
 

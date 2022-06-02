@@ -2,8 +2,11 @@
 //  Pokedrop
 
 import UIKit
+import MBProgressHUD
 
 extension UIViewController {
+    
+    //MARK: - Navigation Bar Setup
     
     func addDefaultNavBar(title: String) {
         navigationController?.navigationBar.backgroundColor = .white
@@ -87,6 +90,7 @@ extension UIViewController {
     }
     
     @objc private func showHourlyReward() {
+        guard view.isUserInteractionEnabled == true else { return }
         
         let fullString = NSMutableAttributedString(string: "You have been awarded\n")
         let attachment = NSTextAttachment(image: UIImage(named: "coinIcon")!)
@@ -99,6 +103,8 @@ extension UIViewController {
                   attributedMessage: fullString,
                   buttonTitle: "Ok")
     }
+    
+    //MARK: - Default PopUp
     
     func showPopup(title: String,
                    message: String? = nil,
@@ -113,5 +119,15 @@ extension UIViewController {
                                                    action: action)
         let vc = PopupViewController(model: model)
         present(vc, animated: true)
+    }
+    
+    //MARK: - Loader
+    
+    func showLoader() {
+        MBProgressHUD.showAdded(to: view, animated: true)
+    }
+    
+    func hideLoader() {
+        MBProgressHUD.hide(for: view, animated: true)
     }
 }
