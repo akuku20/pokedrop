@@ -1,1 +1,7 @@
+*.pbxuser
+!default.pbxuser
+
 *.xcuserstate
+
+xcxuserdata/
+Pods
