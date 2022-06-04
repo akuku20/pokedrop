@@ -38,8 +38,14 @@ final class OpenBallViewController: BaseViewController {
         mainView.onBuyPress = {
             self.viewModel.openPokeball()
         }
+        
+        mainView.proceedToPokemon = {
+            let chosenPokemon = self.viewModel.drawnPokemon
+            let vm = PokemonViewModel(details: chosenPokemon.0, image: chosenPokemon.1)
+            let vc = PokemonViewController(viewModel: vm)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
-    
 }
 
 //MARK: - OpenControllerDrawDelegate

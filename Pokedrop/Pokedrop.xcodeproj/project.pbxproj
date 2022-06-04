@@ -39,6 +39,9 @@
 		84F4268428441E8500B18E1A /* OpenBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F4268328441E8500B18E1A /* OpenBallView.swift */; };
 		84F426862844303A00B18E1A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F426852844303A00B18E1A /* BaseViewController.swift */; };
 		84F42688284432F500B18E1A /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F42687284432F500B18E1A /* ButtonFactory.swift */; };
+		D0DF3BCD284BD9FB0099D2A0 /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF3BCC284BD9FB0099D2A0 /* PokemonViewModel.swift */; };
+		D0DF3BCF284BDA0B0099D2A0 /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF3BCE284BDA0B0099D2A0 /* PokemonViewController.swift */; };
+		D0DF3BD1284BDA180099D2A0 /* PokemonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DF3BD0284BDA180099D2A0 /* PokemonView.swift */; };
 		E9EBC0148B7E09DD67510CB2 /* Pods_Pokedrop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF91B36FEC339A7EE1FCD933 /* Pods_Pokedrop.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +100,9 @@
 		84F4268328441E8500B18E1A /* OpenBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBallView.swift; sourceTree = "<group>"; };
 		84F426852844303A00B18E1A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		84F42687284432F500B18E1A /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
+		D0DF3BCC284BD9FB0099D2A0 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
+		D0DF3BCE284BDA0B0099D2A0 /* PokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
+		D0DF3BD0284BDA180099D2A0 /* PokemonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonView.swift; sourceTree = "<group>"; };
 		EF91B36FEC339A7EE1FCD933 /* Pods_Pokedrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pokedrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7267B3B261AC5301FD1948 /* Pods-Pokedrop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokedrop.debug.xcconfig"; path = "Target Support Files/Pods-Pokedrop/Pods-Pokedrop.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +193,7 @@
 				84F3DD2228422BA300DE2565 /* Collection */,
 				842E30EF2842CB2400453DC9 /* Pokeballs */,
 				84F4267C284410D400B18E1A /* OpenBall */,
+				D0DF3BCB284BD9B70099D2A0 /* Pokemon */,
 				849B27AE28425C2A002F5051 /* Supplementary */,
 				84F3DD08284229BC00DE2565 /* PokedropTests */,
 				84F3DD12284229BC00DE2565 /* PokedropUITests */,
@@ -274,6 +281,16 @@
 				EF91B36FEC339A7EE1FCD933 /* Pods_Pokedrop.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0DF3BCB284BD9B70099D2A0 /* Pokemon */ = {
+			isa = PBXGroup;
+			children = (
+				D0DF3BCC284BD9FB0099D2A0 /* PokemonViewModel.swift */,
+				D0DF3BCE284BDA0B0099D2A0 /* PokemonViewController.swift */,
+				D0DF3BD0284BDA180099D2A0 /* PokemonView.swift */,
+			);
+			path = Pokemon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,10 +471,13 @@
 			files = (
 				84F3DCF4284229BA00DE2565 /* CollectionViewController.swift in Sources */,
 				84F42688284432F500B18E1A /* ButtonFactory.swift in Sources */,
+				D0DF3BCF284BDA0B0099D2A0 /* PokemonViewController.swift in Sources */,
 				84F4267B2843DEF700B18E1A /* PopupViewController.swift in Sources */,
+				D0DF3BD1284BDA180099D2A0 /* PokemonView.swift in Sources */,
 				849B27A328423E0D002F5051 /* DataManager.swift in Sources */,
 				842E30F92842E2C700453DC9 /* UIFontExtension.swift in Sources */,
 				84F4268428441E8500B18E1A /* OpenBallView.swift in Sources */,
+				D0DF3BCD284BD9FB0099D2A0 /* PokemonViewModel.swift in Sources */,
 				84F426862844303A00B18E1A /* BaseViewController.swift in Sources */,
 				842E30F52842DB8100453DC9 /* PokeballsView.swift in Sources */,
 				849B27A928425811002F5051 /* CollectionView.swift in Sources */,
