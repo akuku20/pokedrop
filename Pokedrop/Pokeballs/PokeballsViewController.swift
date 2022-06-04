@@ -4,10 +4,14 @@
 import Foundation
 import UIKit
 
-final class PokeballsViewController: UIViewController {
+final class PokeballsViewController: BaseViewController {
 
+    //MARK: - Variables
+    
     private var mainView = PokeballsView()
     private var viewModel: PokeballsViewModel!
+    
+    //MARK: - Lifecycle
     
     convenience init(viewModel: PokeballsViewModel) {
         self.init()
@@ -25,7 +29,10 @@ final class PokeballsViewController: UIViewController {
     }
 }
 
+//MARK: - UICollectionViewDelegate & DataSource
+
 extension PokeballsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.numberOfPokeballs
     }
@@ -43,6 +50,8 @@ extension PokeballsViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //add cell handling
+        let vm = OpenBallViewModel(pokeball: viewModel.pokeballAt(row: indexPath.item))
+        let vc = OpenBallViewController(viewModel: vm)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

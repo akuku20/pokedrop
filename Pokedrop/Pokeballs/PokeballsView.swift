@@ -5,13 +5,19 @@ import UIKit
 
 final class PokeballsView: BaseView {
     
+    //MARK: - Variables
+    
     private var collectionView: UICollectionView!
+    
+    //MARK: - Lyfecycle
     
     override init() {
         super.init()
         setUpCollectionView()
         setUp()
     }
+    
+    //MARK: - Methods
     
     private func setUpCollectionView() {
         let layout = UICollectionViewFlowLayout()
@@ -21,6 +27,7 @@ final class PokeballsView: BaseView {
         collectionView = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.alwaysBounceVertical = true
         collectionView.contentInset = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 20.0, right: 0.0)
         collectionView.register(PokeballsCell.self, forCellWithReuseIdentifier: PokeballsCell.identifier)
     }

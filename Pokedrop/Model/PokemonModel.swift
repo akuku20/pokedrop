@@ -17,31 +17,31 @@ struct PokemonBase: Decodable {
     }
 }
 
-struct PokemonDetails: Decodable {
+struct PokemonDetails: Decodable, Equatable {
     var name: String
     var id: Int
     var sprites: spritesStruct
     var stats: [statsItemStruct]
     var types: [typesItemStruct]
     
-    struct spritesStruct: Decodable {
+    struct spritesStruct: Decodable, Equatable {
         var frontDefault: String?
     }
     
-    struct statsItemStruct: Decodable {
+    struct statsItemStruct: Decodable, Equatable {
         var baseStat: Int
         var stat: statsNameStruct
     }
     
-    struct statsNameStruct: Decodable {
+    struct statsNameStruct: Decodable, Equatable {
         var name: String
     }
     
-    struct typesItemStruct: Decodable {
+    struct typesItemStruct: Decodable, Equatable {
         var type: typesNameStruct
     }
     
-    struct typesNameStruct: Decodable {
+    struct typesNameStruct: Decodable, Equatable {
         var name: String
     }
 }

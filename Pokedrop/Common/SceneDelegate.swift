@@ -15,12 +15,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             
+            window.overrideUserInterfaceStyle = .light
+            
             // Collection
             let collectionVM = CollectionViewModel()
             let colletionVC = CollectionViewController(viewModel: collectionVM)
             let collectionNavController = UINavigationController(rootViewController: colletionVC)
-            let collectionImg = UIImage(named: "collectionIcon")?.withRenderingMode(.alwaysOriginal).withTintColor(.black)
-            let collectionSelectedImg = UIImage(named: "collectionIcon")?.withRenderingMode(.alwaysOriginal).withTintColor(.gray)
+            let collectionImg = UIImage(named: "collectionIcon")?.withRenderingMode(.alwaysOriginal).withTintColor(.gray)
+            let collectionSelectedImg = UIImage(named: "collectionIcon")?.withRenderingMode(.alwaysOriginal).withTintColor(.black)
             let tabBarItem1 = UITabBarItem(title: nil, image: collectionImg, selectedImage: collectionSelectedImg)
             tabBarItem1.setOnlyImageAppearance()
             collectionNavController.tabBarItem = tabBarItem1
@@ -29,8 +31,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let ballVM = PokeballsViewModel()
             let ballVC = PokeballsViewController(viewModel: ballVM)
             let ballNavController = UINavigationController(rootViewController: ballVC)
-            let ballImg = UIImage(named: "ballIcon")?.withRenderingMode(.alwaysOriginal).withTintColor(.black)
-            let ballSelectedImg = UIImage(named: "ballIcon")?.withRenderingMode(.alwaysOriginal).withTintColor(.gray)
+            let ballImg = UIImage(named: "ballIcon")?.withRenderingMode(.alwaysOriginal).withTintColor(.gray)
+            let ballSelectedImg = UIImage(named: "ballIcon")?.withRenderingMode(.alwaysOriginal).withTintColor(.black)
             let tabBarItem2 = UITabBarItem(title: nil, image: ballImg, selectedImage: ballSelectedImg)
             tabBarItem2.setOnlyImageAppearance()
             ballNavController.tabBarItem = tabBarItem2

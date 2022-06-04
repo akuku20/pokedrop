@@ -3,10 +3,14 @@
 
 import UIKit
 
-final class CollectionViewController: UIViewController {
+final class CollectionViewController: BaseViewController {
 
+    //MARK: - Variables
+    
     private var mainView = CollectionView()
     private var viewModel: CollectionViewModel!
+    
+    //MARK: - Lifecycle
     
     convenience init(viewModel: CollectionViewModel) {
         self.init()
@@ -22,6 +26,21 @@ final class CollectionViewController: UIViewController {
         addDefaultNavBar(title: "Collection")
     }
 
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if PokemonDatabase.shared.listFetchPending {
+            showLoader()
+            PokemonDatabase.shared.fetchData { [weak self] error in
+                guard error.isNil else {
+                    fatalError(error!)
+                }
+                self?.hideLoader()
+            }
+        }
+    }
+    
+    //MARK: - Methods
+    
 }
 

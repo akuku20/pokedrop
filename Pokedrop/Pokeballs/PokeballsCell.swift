@@ -6,6 +6,8 @@ import UIKit
 
 final class PokeballsCell: UICollectionViewCell {
     
+    //MARK: - Variables
+    
     static let identifier = "PokeballCell"
     
     private var imageView: UIImageView = {
@@ -65,6 +67,8 @@ final class PokeballsCell: UICollectionViewCell {
         return view
     }()
         
+    //MARK: - Lifecycle
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUp()
@@ -73,6 +77,8 @@ final class PokeballsCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    //MARK: - Methods
     
     private func setUp() {
         contentView.backgroundColor = .lightGray
