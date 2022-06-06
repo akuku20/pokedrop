@@ -14,7 +14,7 @@ final class PokemonViewModel {
         pokemon.name.capitalized
     }
     
-    var starsAmount: Int {
+    private var starsAmount: Int {
         switch pokemon.rarity {
         case .common: return 1
         case .uncommon: return 2
@@ -79,5 +79,33 @@ final class PokemonViewModel {
         case .water: return UIImage(named: type)!
         case .none: return nil
         }
+    }
+    
+    private func createStar(metric: CGFloat) -> UIImageView {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.widthAnchor.constraint(equalToConstant: metric).isActive = true
+        imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
+        imageView.image = UIImage(named: (starsAmount == 5 ? "superStar" : "defaultStar"))
+        return imageView
+    }
+    
+    func starsView() -> UIView {
+        let metric = UIScreen.main.bounds.width * 0.15
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.widthAnchor.constraint(equalToConstant: metric * CGFloat(starsAmount)).isActive = true
+        view.heightAnchor.constraint(equalToConstant: metric).isActive = true
+        
+        for i in 1...starsAmount {
+            let img = createStar(metric: metric)
+            view.addSubview(img)
+            img.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+            img.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: CGFloat(i-1)*metric).isActive = true
+        }
+        
+        view.backgroundColor = .clear
+        return view
     }
 }

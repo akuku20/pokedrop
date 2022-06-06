@@ -63,7 +63,7 @@ final class PokemonView: BaseView {
         
         addSubview(firstTypeImage)
         firstTypeImage.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        firstTypeImage.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 30).isActive = true
+        firstTypeImage.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: UIScreen.main.bounds.width * 0.15 + 60).isActive = true
         
         addSubview(secondTypeImage)
         secondTypeImage.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
@@ -76,19 +76,23 @@ final class PokemonView: BaseView {
 
     func configure(image: UIImage,
                    name: String,
-                   stars: Int,
                    background: UIImage,
                    firstType: UIImage?,
                    secondType: UIImage?,
+                   starsView: UIView,
                    buttonText: NSMutableAttributedString) {
         imageView.image = image
         nameLabel.text = name
-        //TODO: Stars amount
         backgroundColor = UIColor(patternImage: background)
         button.setAttributedTitle(buttonText, for: .normal)
         if let img = firstType {
             firstTypeImage.image = img
         }
+        
+        addSubview(starsView)
+        starsView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        starsView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20).isActive = true
+        
         if let img = secondType {
             secondTypeImage.image = img
         } else {

@@ -25,10 +25,10 @@ final class PokemonViewController: BaseViewController {
         
         mainView.configure(image: viewModel.pokemonImage,
                            name: viewModel.name,
-                           stars: viewModel.starsAmount,
                            background: viewModel.backgroundImage,
                            firstType: viewModel.typeImage(isFirst: true),
                            secondType: viewModel.typeImage(isFirst: false),
+                           starsView: viewModel.starsView(),
                            buttonText: viewModel.buttonString)
     }
 }
