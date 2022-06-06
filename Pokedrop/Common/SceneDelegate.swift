@@ -41,6 +41,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let tabBarController = UITabBarController()
             tabBarController.tabBar.layer.borderWidth = 1
             tabBarController.tabBar.layer.borderColor = UIColor.black.cgColor
+            tabBarController.tabBar.backgroundColor = .white
             tabBarController.tabBar.clipsToBounds = true
             tabBarController.viewControllers = [collectionNavController, ballNavController]
             

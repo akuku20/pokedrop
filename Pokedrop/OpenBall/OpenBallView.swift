@@ -11,6 +11,8 @@ final class OpenBallView: BaseView {
     
     var onBuyPress: (() -> Void)!
     
+    var proceedToPokemon: (() -> Void)!
+    
     var delegate: OpenViewDrawDelegte!
     
     private var imageView: UIImageView = {
@@ -127,6 +129,7 @@ final class OpenBallView: BaseView {
                 self?.imageView.transform = CGAffineTransform(scaleX: 1, y: 1)
             }, completion: { _ in
                 self?.delegate.launchDrawFetch()
+                self?.proceedToPokemon()
                 self?.switchInteraction(allowed: true)
             })
         })
