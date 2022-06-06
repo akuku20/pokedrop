@@ -94,7 +94,7 @@ final class PokemonDatabase {
                 if let url = self?.pokemonForDraw[idx].imageUrl, let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
                     self?.imagesForDraw.append(image)
                 } else {
-                    self?.imagesForDraw.append(UIImage(named: "ballIcon")!)
+                    self?.imagesForDraw.append(UIImage(named: "questionMark")!)
                 }
                 self?.fetchImage(idx: idx + 1)
             }
