@@ -86,6 +86,8 @@ final class PopupView: BaseView {
         containerView.addSubview(messageLabel)
         messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
         messageLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
+        messageLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 10).isActive = true
+        messageLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -10).isActive = true
         
         containerView.addSubview(button)
         button.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true

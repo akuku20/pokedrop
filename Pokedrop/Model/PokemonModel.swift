@@ -69,13 +69,13 @@ enum PokemonRarity: Int {
     var priceMultiplier: Double {
         switch self {
         case .common:
-            return 0.5
-        case .uncommon:
             return 0.75
+        case .uncommon:
+            return 0.85
         case .rare:
-            return 1.0
+            return 1.15
         case .superRare:
-            return 1.25
+            return 1.3
         case .ultimate:
             return 1.5
         case .unknown:

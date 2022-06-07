@@ -24,6 +24,8 @@ final class CollectionViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addDefaultNavBar(title: "Collection")
+        
+        CoinManager.shared.startupFetch()
     }
 
     override func viewDidAppear(_ animated: Bool) {
