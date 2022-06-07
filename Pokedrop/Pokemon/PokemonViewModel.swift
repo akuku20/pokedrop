@@ -103,7 +103,7 @@ final class PokemonViewModel {
     }
     
     func starsView() -> UIView {
-        let metric = UIScreen.main.bounds.width * 0.15
+        let metric = UIScreen.main.bounds.height * 0.06
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.widthAnchor.constraint(equalToConstant: metric * CGFloat(starsAmount)).isActive = true

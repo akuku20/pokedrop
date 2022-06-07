@@ -8,11 +8,13 @@ final class PokemonView: BaseView {
     
     var onSellPress: (() -> Void)?
     
+    let margin = UIScreen.main.bounds.height * 0.06
+    
     private var imageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFit
-        view.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width * 0.5).isActive = true
+        view.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.25).isActive = true
         view.heightAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         return view
     }()
@@ -31,8 +33,8 @@ final class PokemonView: BaseView {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFit
-        view.widthAnchor.constraint(equalToConstant: 95).isActive = true
-        view.heightAnchor.constraint(equalToConstant: 36.1).isActive = true
+        view.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.1).isActive = true
+        view.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.038).isActive = true
         return view
     }()
 
@@ -40,8 +42,8 @@ final class PokemonView: BaseView {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFit
-        view.widthAnchor.constraint(equalToConstant: 95).isActive = true
-        view.heightAnchor.constraint(equalToConstant: 36.1).isActive = true
+        view.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.1).isActive = true
+        view.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.038).isActive = true
         return view
     }()
 
@@ -52,28 +54,28 @@ final class PokemonView: BaseView {
         setUp()
     }
     
-    private func setUp() {        
+    private func setUp() {
         addSubview(imageView)
         imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        imageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 75).isActive = true
+        imageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 1.5 * margin).isActive = true
         
         addSubview(nameLabel)
         nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 30).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 0.33 * margin).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30).isActive = true
         
         addSubview(firstTypeImage)
         firstTypeImage.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        firstTypeImage.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: UIScreen.main.bounds.width * 0.15 + 60).isActive = true
+        firstTypeImage.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: UIScreen.main.bounds.width * 0.06 + 1.5 * margin).isActive = true
         
         addSubview(secondTypeImage)
         secondTypeImage.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        secondTypeImage.topAnchor.constraint(equalTo: firstTypeImage.bottomAnchor, constant: 30).isActive = true
+        secondTypeImage.topAnchor.constraint(equalTo: firstTypeImage.bottomAnchor, constant: 0.67 * margin).isActive = true
 
         addSubview(button)
         button.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        button.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        button.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -0.67 * margin).isActive = true
         button.addTarget(self, action: #selector(sellPressed), for: .touchUpInside)
     }
 
@@ -94,7 +96,7 @@ final class PokemonView: BaseView {
         
         addSubview(starsView)
         starsView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        starsView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20).isActive = true
+        starsView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 0.33 * margin).isActive = true
         
         if let img = secondType {
             secondTypeImage.image = img
