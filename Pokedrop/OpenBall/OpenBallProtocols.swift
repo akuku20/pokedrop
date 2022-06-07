@@ -1,4 +1,4 @@
-//  DrawDelegateProtocol.swift
+//  OpenBallProtocols.swift
 //  Pokedrop
 
 import Foundation

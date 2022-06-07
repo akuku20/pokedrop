@@ -94,11 +94,13 @@ final class OpenBallView: BaseView {
     
     func restoreImage(to image: UIImage) {
         imageView.image = image
+        button.alpha = 1
     }
     
     func beginDraw(idx: Int) {
         UIView.animate(withDuration: 1, animations: { [weak self] in
             self?.imageView.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+            self?.button.alpha = 0
         }, completion: { [weak self] _ in
             UIView.animate(withDuration: 1, animations: {
                 self?.imageView.transform = CGAffineTransform(scaleX: 1, y: 1)

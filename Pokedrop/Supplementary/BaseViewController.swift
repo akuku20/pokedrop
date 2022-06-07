@@ -9,7 +9,6 @@ class BaseViewController: UIViewController {
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         self.navigationController?.navigationBar.isTranslucent = true
@@ -17,6 +16,7 @@ class BaseViewController: UIViewController {
         appearance.shadowColor = .white.withAlphaComponent(0.5)
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
