@@ -36,15 +36,29 @@ final class OpenBallViewController: BaseViewController {
                            buttonText: viewModel.buttonString)
         
         mainView.onBuyPress = {
-            self.viewModel.openPokeball()
+            if let balance = CoinManager.shared.balance, balance >= self.viewModel.price {
+                CoinManager.shared.changeBalance(by: -1 * self.viewModel.price)
+                self.updateNavigationBar()
+                self.viewModel.openPokeball()
+            } else {
+                self.mainView.switchInteraction(allowed: true)
+                self.showPopup(title: "Not enough",
+                          message: "You don't have enough coins!",
+                          buttonTitle: "Alright:(")
+            }
         }
         
         mainView.proceedToPokemon = {
             let chosenPokemon = self.viewModel.drawnPokemon
-            let vm = PokemonViewModel(details: chosenPokemon.0, image: chosenPokemon.1)
+            let vm = PokemonViewModel(details: chosenPokemon.0, image: chosenPokemon.1, from: .draw)
             let vc = PokemonViewController(viewModel: vm)
             self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        mainView.restoreImage(to: viewModel.image)
     }
 }
 

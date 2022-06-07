@@ -6,6 +6,8 @@ import UIKit
 
 final class PokemonView: BaseView {
     
+    var onSellPress: (() -> Void)?
+    
     private var imageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -72,6 +74,7 @@ final class PokemonView: BaseView {
         addSubview(button)
         button.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         button.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        button.addTarget(self, action: #selector(sellPressed), for: .touchUpInside)
     }
 
     func configure(image: UIImage,
@@ -98,5 +101,9 @@ final class PokemonView: BaseView {
         } else {
             secondTypeImage.isHidden = true
         }
+    }
+    
+    @objc func sellPressed() {
+        onSellPress?()
     }
 }

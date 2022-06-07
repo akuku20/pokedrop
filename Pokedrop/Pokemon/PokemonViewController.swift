@@ -30,6 +30,11 @@ final class PokemonViewController: BaseViewController {
                            secondType: viewModel.typeImage(isFirst: false),
                            starsView: viewModel.starsView(),
                            buttonText: viewModel.buttonString)
+        
+        mainView.onSellPress = {
+            CoinManager.shared.changeBalance(by: self.viewModel.price)
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
 

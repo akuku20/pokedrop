@@ -6,12 +6,22 @@ import UIKit
 
 final class PokemonViewModel {
     
+    enum Mode {
+        case draw, preview
+    }
+    
+    private var mode: Mode
+    
     private var pokemon: PokemonDetails
     
     var pokemonImage: UIImage
     
     var name: String {
         pokemon.name.capitalized
+    }
+    
+    var price: Int {
+        pokemon.price
     }
     
     private var starsAmount: Int {
@@ -50,9 +60,10 @@ final class PokemonViewModel {
         return fullString
     }
     
-    init(details: PokemonDetails, image: UIImage) {
+    init(details: PokemonDetails, image: UIImage, from: Mode) {
         pokemon = details
         pokemonImage = image
+        mode = from
     }
 
     func typeImage(isFirst: Bool) -> UIImage? {
