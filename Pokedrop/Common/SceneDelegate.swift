@@ -87,8 +87,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension UITabBarItem {
     func setOnlyImageAppearance() {
-        self.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
+        let inset = UIScreen.main.bounds.height * 0.01
+        self.imageInsets = UIEdgeInsets(top: inset, left: 0, bottom: -inset, right: 0)
         self.title = nil
         self.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 1000.0)
+    }
+}
+
+extension UITabBarController {
+    override open func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        let height = UIScreen.main.bounds.height * 0.075
+        tabBar.frame.size.height = height
+        tabBar.frame.origin.y = view.frame.height - height
     }
 }

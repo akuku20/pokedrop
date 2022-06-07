@@ -77,7 +77,7 @@ final class OpenBallView: BaseView {
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         addSubview(button)
         button.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        button.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        button.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: UIScreen.main.bounds.height * -0.0402).isActive = true
     }
     
     @objc private func buttonPressed() {
