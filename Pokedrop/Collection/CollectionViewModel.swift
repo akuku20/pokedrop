@@ -14,8 +14,11 @@ final class CollectionViewModel: NSObject {
     private var collectionData: [FetchedPokemon] = []
     private var collectionEntities: [PokemonEntity] = []
     
+    private var filteredData: [FetchedPokemon] = []
+    private var filteredEntities: [PokemonEntity] = []
+    
     var numberOfPokemon: Int {
-        collectionData.count
+        filteredData.count
     }
     
     override init() {
@@ -31,20 +34,20 @@ final class CollectionViewModel: NSObject {
     }
     
     func pokemonDetails(at idx: Int) -> PokemonDetails {
-        collectionData[idx].details
+        filteredData[idx].details
     }
     
     func pokemonImage(at idx: Int) -> UIImage {
-        collectionData[idx].image
+        filteredData[idx].image
     }
     
     func pokemonEntity(at idx: Int) -> PokemonEntity {
-        collectionEntities[idx]
+        filteredEntities[idx]
     }
     
     func setUpData() {
-        self.fetchFromCoreData()
-        self.output.refresh()
+        fetchFromCoreData()
+        output.refresh()
     }
     
     private func fetchFromCoreData() {
@@ -64,6 +67,20 @@ final class CollectionViewModel: NSObject {
         
         let adapter = DetailsAdapter()
         collectionData = collectionEntities.compactMap({ adapter.createDetails(from: $0) })
+        
+        filteredData = collectionData
+        filteredEntities = collectionEntities
+    }
+    
+    func filterPokemons(by text: String) {
+        if text == "" {
+            filteredData = collectionData
+            filteredEntities = collectionEntities
+        } else {
+            filteredData = collectionData.filter({ $0.details.name.lowercased().contains(text) })
+            filteredEntities = collectionEntities.filter({ $0.name!.lowercased().contains(text) })
+        }
+        output.refresh()
     }
 }
 

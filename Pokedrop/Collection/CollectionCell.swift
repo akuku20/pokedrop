@@ -34,9 +34,6 @@ final class CollectionCell: UICollectionViewCell {
     
     private func setUp() {
         contentView.backgroundColor = .clear
-        contentView.layer.cornerRadius = (UIScreen.main.bounds.width - 80) / 12
-        contentView.layer.borderColor = UIColor.lightGray.cgColor
-        contentView.layer.borderWidth = 0
         
         contentView.addSubview(imageView)
         imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
@@ -45,13 +42,5 @@ final class CollectionCell: UICollectionViewCell {
     
     func configure(with image: UIImage) {
         imageView.image = image
-    }
-    
-    func switchAppearance(highlight: Bool) {
-        if highlight {
-            contentView.layer.borderWidth = 1
-        } else {
-            contentView.layer.borderWidth = 0
-        }
     }
 }
