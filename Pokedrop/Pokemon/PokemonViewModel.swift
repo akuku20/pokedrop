@@ -3,6 +3,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 final class PokemonViewModel {
     
@@ -10,9 +11,13 @@ final class PokemonViewModel {
         case draw, preview
     }
     
-    private var mode: Mode
+    var mode: Mode
+    
+    var saved = false
     
     private var pokemon: PokemonDetails
+    
+    private var currentEntity: PokemonEntity?
     
     var pokemonImage: UIImage
     
@@ -60,10 +65,13 @@ final class PokemonViewModel {
         return fullString
     }
     
-    init(details: PokemonDetails, image: UIImage, from: Mode) {
+    init(details: PokemonDetails, image: UIImage, from: Mode, entity: PokemonEntity? = nil) {
         pokemon = details
         pokemonImage = image
         mode = from
+        if let entity = entity {
+            currentEntity = entity
+        }
     }
 
     func typeImage(isFirst: Bool) -> UIImage? {
@@ -118,5 +126,40 @@ final class PokemonViewModel {
         
         view.backgroundColor = .clear
         return view
+    }
+    
+    func saveToCoreData() {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            let newEntity = PokemonEntity(context: context)
+            
+            newEntity.uuid = UUID()
+            newEntity.id = Int32(pokemon.id)
+            newEntity.name = pokemon.name
+            newEntity.statsSum = Int32(pokemon.statsSum)
+            newEntity.primaryType = pokemon.primaryType?.rawValue
+            newEntity.secondaryType = pokemon.secondaryType?.rawValue
+            newEntity.image = pokemonImage.pngData()
+            
+            currentEntity = newEntity
+            AppDelegate.shared.saveContext()
+        }
+    }
+    
+    func deleteFromCoreData() {
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext, let ent = currentEntity {
+            context.delete(ent)
+            AppDelegate.shared.saveContext()
+        }
+    }
+    
+    func isPokemonSold() -> Bool {
+        if currentEntity?.uuid == nil {
+            if mode == .preview {
+                return true
+            } else {
+                return saved
+            }
+        }
+        return false
     }
 }

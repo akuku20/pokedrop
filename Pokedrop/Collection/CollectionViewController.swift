@@ -15,6 +15,7 @@ final class CollectionViewController: BaseViewController {
     convenience init(viewModel: CollectionViewModel) {
         self.init()
         self.viewModel = viewModel
+        self.viewModel.output = self
     }
     
     override func loadView() {
@@ -24,8 +25,9 @@ final class CollectionViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addDefaultNavBar(title: "Collection")
-        
         CoinManager.shared.startupFetch()
+        mainView.bindCollection(to: self)
+        viewModel.setUpData()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -41,8 +43,51 @@ final class CollectionViewController: BaseViewController {
             }
         }
     }
+}
+
+extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    //MARK: - Methods
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewModel.numberOfPokemon
+    }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionCell.identifier, for: indexPath) as? CollectionCell else {
+            return UICollectionViewCell()
+        }
+        cell.configure(with: viewModel.pokemonImage(at: indexPath.item))
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vm = PokemonViewModel(details: viewModel.pokemonDetails(at: indexPath.item),
+                                  image: viewModel.pokemonImage(at: indexPath.item),
+                                  from: .preview,
+                                  entity: viewModel.pokemonEntity(at: indexPath.item))
+        let vc = PokemonViewController(viewModel: vm)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? CollectionCell {
+            cell.switchAppearance(highlight: true)
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? CollectionCell {
+            cell.switchAppearance(highlight: false)
+        }
+    }
+}
+
+extension CollectionViewController: CollectionModelOutput {
+    func refresh() {
+        mainView.reload()
+    }
 }
 

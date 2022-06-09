@@ -117,12 +117,4 @@ extension PokemonDetails {
     var price: Int {
         Int(Double(statsSum) * rarity.priceMultiplier)
     }
-    
-    var isSingleType: Bool {
-        types.count == 1
-    }
-    
-    var isDualType: Bool {
-        types.count == 2
-    }
 }

@@ -32,8 +32,20 @@ final class PokemonViewController: BaseViewController {
                            buttonText: viewModel.buttonString)
         
         mainView.onSellPress = {
+            self.viewModel.deleteFromCoreData()
             CoinManager.shared.changeBalance(by: self.viewModel.price)
             self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if viewModel.isPokemonSold() {
+            navigationController?.popViewController(animated: false)
+        }
+        if viewModel.mode == .draw, !viewModel.saved {
+            viewModel.saved = true
+            viewModel.saveToCoreData()
         }
     }
 }
