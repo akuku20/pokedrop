@@ -10,6 +10,17 @@ final class PokemonView: BaseView {
     
     let margin = UIScreen.main.bounds.height * 0.06
     
+    private var backgroundView: UIImageView = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .scaleAspectFit
+        view.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.35).isActive = true
+        view.heightAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        view.image = UIImage(named: "stripes")!
+        view.alpha = 0.8
+        return view
+    }()
+    
     private var imageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -55,9 +66,16 @@ final class PokemonView: BaseView {
     }
     
     private func setUp() {
+        backgroundColor = .white
+        
         addSubview(imageView)
         imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         imageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 1.5 * margin).isActive = true
+        
+        addSubview(backgroundView)
+        backgroundView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        backgroundView.centerYAnchor.constraint(equalTo: imageView.centerYAnchor).isActive = true
+        bringSubviewToFront(imageView)
         
         addSubview(nameLabel)
         nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
@@ -81,15 +99,17 @@ final class PokemonView: BaseView {
 
     func configure(image: UIImage,
                    name: String,
-                   background: UIImage,
+                   background: UIColor,
                    firstType: UIImage?,
                    secondType: UIImage?,
                    starsView: UIView,
                    buttonText: NSMutableAttributedString) {
+        
         imageView.image = image
         nameLabel.text = name
-        backgroundColor = UIColor(patternImage: background)
+        backgroundView.image = backgroundView.image?.withRenderingMode(.alwaysOriginal).withTintColor(background)
         button.setAttributedTitle(buttonText, for: .normal)
+        
         if let img = firstType {
             firstTypeImage.image = img
         }

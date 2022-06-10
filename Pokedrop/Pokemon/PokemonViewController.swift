@@ -25,7 +25,7 @@ final class PokemonViewController: BaseViewController {
         
         mainView.configure(image: viewModel.pokemonImage,
                            name: viewModel.name,
-                           background: viewModel.backgroundImage,
+                           background: viewModel.backgroundColor,
                            firstType: viewModel.typeImage(isFirst: true),
                            secondType: viewModel.typeImage(isFirst: false),
                            starsView: viewModel.starsView(),

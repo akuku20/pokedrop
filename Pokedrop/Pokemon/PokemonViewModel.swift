@@ -40,14 +40,14 @@ final class PokemonViewModel {
         }
     }
     
-    var backgroundImage: UIImage {
+    var backgroundColor: UIColor {
         switch pokemon.rarity {
-        case .common: return UIImage(named: "commonBg")!
-        case .uncommon: return UIImage(named: "uncommonBg")!
-        case .rare: return UIImage(named: "rareBg")!
-        case .superRare: return UIImage(named: "superRareBg")!
-        case .ultimate: return UIImage(named: "ultimateBg")!
-        case .unknown: return UIImage(named: "commonBg")!
+        case .common: return .lightGray
+        case .uncommon: return .green
+        case .rare: return .blue
+        case .superRare: return .purple
+        case .ultimate: return .red
+        case .unknown: return .lightGray
         }
     }
     

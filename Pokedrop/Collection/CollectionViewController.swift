@@ -43,6 +43,13 @@ final class CollectionViewController: BaseViewController {
             }
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        viewModel.filterPokemons(by: "")
+        mainView.resetSearch()
+        mainView.endEditing(true)
+    }
 }
 
 extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -64,6 +71,7 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        mainView.endEditing(true)
         let vm = PokemonViewModel(details: viewModel.pokemonDetails(at: indexPath.item),
                                   image: viewModel.pokemonImage(at: indexPath.item),
                                   from: .preview,
@@ -72,16 +80,42 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath) as? CollectionCell {
-            cell.switchAppearance(highlight: true)
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        mainView.endEditing(true)
+    }
+}
+
+extension CollectionViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.text == "Search..." {
+            textField.text = ""
+            textField.textColor = .black
         }
     }
-
-    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath) as? CollectionCell {
-            cell.switchAppearance(highlight: false)
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text?.count == 0 {
+            textField.textColor = .lightGray
+            textField.text = "Search..."
         }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let nsString = NSString(string: textField.text ?? "")
+        let finalString = String(nsString.replacingCharacters(in: range, with: string)).lowercased()
+        viewModel.filterPokemons(by: finalString)
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        mainView.endEditing(true)
+        return true
+    }
+}
+
+extension CollectionViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        true
     }
 }
 
